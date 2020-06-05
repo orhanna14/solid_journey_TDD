@@ -42,17 +42,17 @@ class TestLexicon < Test::Unit::TestCase
   end
 
   def test_errors()
-    assert_equal(Lexicon.scan("ASDFADFASDF"), [['error', 'ASDFADFASDF']])
+    assert_equal(Lexicon.scan("ASDFADFASDF"), [['error', 'asdfadfasdf']])
     result = Lexicon.scan("bear IAS princess")
     assert_equal(result, [['noun', 'bear'],
-           ['error', 'IAS'],
+           ['error', 'ias'],
            ['noun', 'princess']])
   end
 
   def test_combinations()
     result = Lexicon.scan("bear IAS 4 princess in tree hole")
     assert_equal(result, [['noun', 'bear'],
-           ['error', 'IAS'],
+           ['error', 'ias'],
            ['number', 4],
            ['noun', 'princess'],
            ['stop', 'in'],

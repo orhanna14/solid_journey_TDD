@@ -6,7 +6,7 @@ class Lexicon
     nouns = ['bear', 'princess', 'tree', 'hole']
     @@sentence = []
 
-    split_input = user_input.split
+    split_input = user_input.downcase.split
       split_input.each { |word|
         if convert_number(word)
           push_to_sentence('number', word.to_i)
