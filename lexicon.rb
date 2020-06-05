@@ -1,4 +1,13 @@
 class Lexicon
+
+  def self.convert_number(object)
+    begin
+      return Integer(object)
+    rescue
+      return nil
+    end
+  end
+
   def self.scan(user_input)
     directions = ['north', 'south', 'east', 'west']
     verbs = ['go', 'kill', 'eat']
@@ -9,9 +18,13 @@ class Lexicon
     print_verbs = []
     print_stops = []
     print_nouns = []
+    print_numbers = []
 
     split_input = user_input.split
       split_input.each { |word|
+       if convert_number(word)
+          print_numbers.push(['number', word.to_i])
+       end
         if directions.include?(word)
           print_directions.push(['direction', word])
         end
@@ -33,6 +46,8 @@ class Lexicon
         print_stops
       elsif !print_nouns.empty?
         print_nouns
+      elsif !print_numbers.empty?
+        print_numbers
       end
   end
 end
