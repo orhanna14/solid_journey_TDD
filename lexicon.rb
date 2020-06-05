@@ -1,14 +1,15 @@
 class Lexicon
-  def self.initialize
-    directions = []
-  end
+  def self.scan(user_input)
+    directions = ['north', 'south', 'east', 'west']
+    #verbs = ['go', 'kill', 'eat']
+    print_directions = []
+    split_input = user_input.split
+      split_input.each { |direction|
+        if directions.include?(direction)
+        print_directions.push(['direction', direction])
+        end
+      }
+    print_directions
 
-  def self.scan(direction)
-    directions = []
-    direction_array = direction.split
-    direction_array.each { |direction|
-      directions.push(['direction', direction])
-    }
-    directions
   end
 end
