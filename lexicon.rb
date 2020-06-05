@@ -2,8 +2,8 @@ class Lexicon
   def self.scan(user_input)
     directions = ['north', 'south', 'east', 'west']
     verbs = ['go', 'kill', 'eat']
-    stops = ['the', 'in', 'of']
-    nouns = ['bear', 'princess']
+    stops = ['the', 'in', 'of', 'to']
+    nouns = ['bear', 'princess', 'tree', 'hole']
     @@sentence = []
 
     split_input = user_input.split

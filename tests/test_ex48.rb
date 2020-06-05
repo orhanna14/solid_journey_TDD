@@ -48,4 +48,15 @@ class TestLexicon < Test::Unit::TestCase
            ['error', 'IAS'],
            ['noun', 'princess']])
   end
+
+  def test_combinations()
+    result = Lexicon.scan("bear IAS 4 princess in tree hole")
+    assert_equal(result, [['noun', 'bear'],
+           ['error', 'IAS'],
+           ['number', 4],
+           ['noun', 'princess'],
+           ['stop', 'in'],
+           ['noun', 'tree'],
+           ['noun', 'hole']])
+  end
 end
