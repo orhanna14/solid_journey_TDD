@@ -20,6 +20,7 @@ class Lexicon
     print_nouns = []
     print_numbers = []
     print_errors = []
+    final_output = []
 
     split_input = user_input.split
       split_input.each { |word|
@@ -38,18 +39,18 @@ class Lexicon
         end
       }
 
-    if !print_directions.empty?
-      print_directions
-    elsif !print_verbs.empty?
-      print_verbs
-    elsif !print_stops.empty?
-      print_stops
-    elsif !print_nouns.empty?
-      print_nouns
-    elsif !print_numbers.empty?
-      print_numbers
-    else
-      print_errors
-    end
+      if !print_directions.empty?
+        print_directions
+      elsif !print_verbs.empty?
+        print_verbs
+      elsif !print_stops.empty?
+        print_stops
+      elsif !print_nouns.empty?
+        print_nouns
+      elsif !print_numbers.empty?
+        print_numbers
+      else
+        print_errors
+      end
   end
 end
