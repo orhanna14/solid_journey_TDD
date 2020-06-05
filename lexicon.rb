@@ -3,10 +3,12 @@ class Lexicon
     directions = ['north', 'south', 'east', 'west']
     verbs = ['go', 'kill', 'eat']
     stops = ['the', 'in', 'of']
+    nouns = ['bear', 'princess']
 
     print_directions = []
     print_verbs = []
     print_stops = []
+    print_nouns = []
 
     split_input = user_input.split
       split_input.each { |word|
@@ -19,6 +21,9 @@ class Lexicon
         if stops.include?(word)
           print_stops.push(['stop', word])
         end
+        if nouns.include?(word)
+          print_nouns.push(['noun', word])
+        end
       }
       if !print_directions.empty?
         print_directions
@@ -26,6 +31,8 @@ class Lexicon
         print_verbs
       elsif !print_stops.empty?
         print_stops
+      elsif !print_nouns.empty?
+        print_nouns
       end
   end
 end
