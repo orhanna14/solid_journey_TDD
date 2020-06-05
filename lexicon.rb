@@ -24,31 +24,32 @@ class Lexicon
     split_input = user_input.split
       split_input.each { |word|
         if convert_number(word)
-              print_numbers.push(['number', word.to_i])
+          print_numbers.push(['number', word.to_i])
         elsif directions.include?(word)
-            print_directions.push(['direction', word])
+          print_directions.push(['direction', word])
         elsif verbs.include?(word)
-            print_verbs.push(['verb', word])
+          print_verbs.push(['verb', word])
         elsif stops.include?(word)
-            print_stops.push(['stop', word])
+          print_stops.push(['stop', word])
         elsif nouns.include?(word)
-            print_nouns.push(['noun', word])
+          print_nouns.push(['noun', word])
         else
           print_errors.push(['error', word])
         end
       }
-      if !print_directions.empty?
-        print_directions
-      elsif !print_verbs.empty?
-        print_verbs
-      elsif !print_stops.empty?
-        print_stops
-      elsif !print_nouns.empty?
-        print_nouns
-      elsif !print_numbers.empty?
-        print_numbers
-      else
-        print_errors
-      end
+
+    if !print_directions.empty?
+      print_directions
+    elsif !print_verbs.empty?
+      print_verbs
+    elsif !print_stops.empty?
+      print_stops
+    elsif !print_nouns.empty?
+      print_nouns
+    elsif !print_numbers.empty?
+      print_numbers
+    else
+      print_errors
+    end
   end
 end
