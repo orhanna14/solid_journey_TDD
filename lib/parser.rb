@@ -3,15 +3,16 @@ end
 
 class Sentence
   #we take the ['direction', 'north'] pairs and convert them to subject, verb, object
-  attr_reader :subject, :verb, :object
+  attr_reader :subject, :verb, :number, :object
 
-  def initialize(subject, verb, object)
+  def initialize(subject, verb, number, object)
     #The parameters are 2 element arrays, 
     #with the index 0 holding the type of word it is.
     # to get the word, we need index 1
     @subject = subject[1]
     @verb = verb[1]
     @object = object[1]
+    @number = number[1]
   end
 end
 
@@ -40,6 +41,16 @@ class Parser
       end
     else
       return nil
+    end
+  end
+
+  def self.parse_number(word_list)
+    skip(word_list, 'stop')
+
+    if peek(word_list) == 'number'
+      return match(word_list, 'number')
+    else
+      return ['number', 1]
     end
   end
 
@@ -95,8 +106,9 @@ class Parser
   def self.parse_sentence(word_list)
     subject = parse_subject(word_list)
     verb = parse_verb(word_list)
+    number = parse_number(word_list)
     object = parse_object(word_list)
 
-    return Sentence.new(subject, verb, object)
+    return Sentence.new(subject, verb, number, object)
   end
 end
