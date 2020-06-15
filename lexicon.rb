@@ -1,9 +1,9 @@
 class Lexicon
   def self.scan(user_input)
     directions = ['north', 'south', 'east', 'west']
-    verbs = ['go', 'kill', 'eat']
-    stops = ['the', 'in', 'of', 'to']
-    nouns = ['bear', 'princess', 'tree', 'hole']
+    verbs = ['go', 'kill', 'eat', 'ran', 'run', 'walk', 'take']
+    stops = ['the', 'in', 'of', 'to', 'and', 'with', 'at']
+    nouns = ['bear', 'princess', 'tree', 'hole', 'door']
     @@sentence = []
 
     split_input = user_input.downcase.split
@@ -38,3 +38,5 @@ class Lexicon
     @@sentence.push(pair)
   end
 end
+
+print Lexicon.scan("Kill the 40 bear and save the princess")
