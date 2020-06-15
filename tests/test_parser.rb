@@ -1,4 +1,4 @@
-require_relative '../lib/ex48/parser.rb'
+require_relative '../lib/parser.rb'
 require "test/unit"
 
 class TestParser < Test::Unit::TestCase
@@ -52,6 +52,7 @@ class TestParser < Test::Unit::TestCase
     
     assert_equal('bear', sentence.subject)
     assert_equal('ran', sentence.verb)
+    assert_equal(1, sentence.number)
     assert_equal('princess', sentence.object)
   end
 end
