@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "http://domainforproject.com/"
   spec.license       = "MIT"
 
-  spec.files         = ['lib/ex48.rb', 'lib/ex48/parser.rb']
+  spec.files         = ['lib/ex48.rb', 'lib/parser.rb']
   spec.executables   = ['bin/ex48']
   spec.test_files    = ['tests/test_ex48.rb', 'tests/test_parser.rb']
   spec.require_paths = ["lib"]
